@@ -16,25 +16,37 @@ Buon lavoro e buon divertimento!*/
 
 for (i = 0; i <= 100.; i++) {
 
-    if (i % 3 == 0){
+    if (i % 3 == 0) {
         console.log("fizz")
-    }
-        
-    else if (i % 5 ==0){
-        console.log("bazz")
-    }
-    
-    else if (i % 3 && i % 5 ==0){
-        console.log(frizzbazz)
-    }
-    else {
-        console.log(i)
-    }
+        let fizz=""
+        document.getElementById("contenitoreNumeri").innerHTML += `
+    <div class="col text-center">
+        <div class="py-5 bg-primary"> ${fizz} </div>
+    </div>`;
 
-    document.getElementById("contenitoreNumeri").innerHTML += `
+    } else if (i % 5 == 0) {
+        console.log("bazz")
+        let bazz=""
+        document.getElementById("contenitoreNumeri").innerHTML += `
+    <div class="col text-center">
+        <div class="py-5 bg-primary"> ${bazz} </div>
+    </div>`;
+    
+    } else if (i % 3 && i % 5 == 0) {
+        console.log(frizzbazz)
+        let fizzbazz=""
+        document.getElementById("contenitoreNumeri").innerHTML += `
+    <div class="col text-center">
+        <div class="py-5 bg-primary"> ${fizzbazz} </div>
+    </div>`;
+
+    } else {
+        console.log(i)
+        document.getElementById("contenitoreNumeri").innerHTML += `
     <div class="col text-center">
         <div class="py-5 bg-primary"> ${i} </div>
     </div>`;
+    }
 
 
 }
