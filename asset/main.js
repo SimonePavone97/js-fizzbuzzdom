@@ -14,15 +14,27 @@ Consigli del giorno:
 2. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 Buon lavoro e buon divertimento!*/
 
-for( i=0; i<=100; i++ ){ 
-    console.log(i)
-    document.getElementById("contenitoreNumeri").innerHTML+= `
+for (i = 0; i <= 100.; i++) {
+
+    if (i % 3 == 0){
+        console.log("fizz")
+    }
+        
+    else if (i % 5 ==0){
+        console.log("bazz")
+    }
+    
+    else if (i % 3 && i % 5 ==0){
+        console.log(frizzbazz)
+    }
+    else {
+        console.log(i)
+    }
+
+    document.getElementById("contenitoreNumeri").innerHTML += `
     <div class="col text-center">
         <div class="py-5 bg-primary"> ${i} </div>
     </div>`;
 
-    if( i % 3 == 0 ){
-        console.log(`frizz`)
-    }
-}
 
+}
