@@ -1,52 +1,48 @@
-/*Consegna:
-Scrivi un programma che stampi in console i numeri da 1 a 100.
-MILESTONE 1
-Per i multipli di 3 stampi “Fizz” al posto del numero e per i multipli di 5 stampi Buzz.
-Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.
-MILESTONE 2 (Bonus)
-Dato un container nel DOM, appendi un elemento html con il numero o la stringa corretta.
-MILESTONE 3 ( superbonus )
-Applica uno stile differente a seconda del valore dell'indice per i multipli di 3, per i multipli di 5 e per i valori che sono sia multipli di 3 che di 5.
-Prima di partire a scrivere codice poniamoci qualche domanda:
-Come faccio a sapere se un numero è divisibile per un altro? Abbiamo visto qualcosa di particolare che possiamo usare? Come creare nuovi elementi html e appenderli al container?
-Consigli del giorno:
-1. scriviamo sempre prima dei commenti in italiano per capire cosa vogliamo fare
-2. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
-Buon lavoro e buon divertimento!*/
+// MILESTONE 1
 
-for (i = 0; i <= 100.; i++) {
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
 
-    if (i % 3 == 0) {
-        console.log("fizz")
-        let fizz=""
-        document.getElementById("contenitoreNumeri").innerHTML += `
-    <div class="col text-center">
-        <div class="py-5 bg-primary"> ${fizz} </div>
-    </div>`;
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
 
-    } else if (i % 5 == 0) {
-        console.log("bazz")
-        let bazz=""
-        document.getElementById("contenitoreNumeri").innerHTML += `
-    <div class="col text-center">
-        <div class="py-5 bg-primary"> ${bazz} </div>
-    </div>`;
-    
-    } else if (i % 3 && i % 5 == 0) {
-        console.log(frizzbazz)
-        let fizzbazz=""
-        document.getElementById("contenitoreNumeri").innerHTML += `
-    <div class="col text-center">
-        <div class="py-5 bg-primary"> ${fizzbazz} </div>
-    </div>`;
+    } else if (i % 5 === 0) {
+        console.log("Buzz")
 
     } else {
-        console.log(i)
-        document.getElementById("contenitoreNumeri").innerHTML += `
-    <div class="col text-center">
-        <div class="py-5 bg-primary"> ${i} </div>
-    </div>`;
+        console.log(i);
     }
+
+}
+
+
+// MILESTONE 2
+
+
+let containerNumeri = document.querySelector(`.contenitore_numeri`)
+
+for (let i = 1; i <= 100; i++) {
+
+
+    if (i % 3 === 0 && i % 5 === 0) {
+        containerNumeri.innerHTML += `<div class="quadrato fizzbuzz">fizzbuzz</div>`;
+
+    } else if (i % 3 === 0) {
+        containerNumeri.innerHTML += `<div class="quadrato fizz">fizz</div>`;
+
+
+    } else if (i % 5 === 0) {
+        containerNumeri.innerHTML += `<div class="quadrato buzz">buzz</div>`;
+        
+
+    } else {
+        
+        containerNumeri.innerHTML += `<div class="quadrato">${i}</div>`;
+    }
+
+
+
 
 
 }
